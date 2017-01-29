@@ -1,0 +1,30 @@
+#JSGF V1.0;
+
+grammar dialog;
+
+<digit> = zero  |
+          one   |
+          two   |
+          three |
+          four  |
+          five  |
+          six   |
+          seven |
+          eight |
+          nine  ;
+
+<number> = <digit>+ [point <digit>+] ;
+
+<action> = start    |
+           stop     |
+           move     |
+           go       ;
+
+<direction> = right     |
+              left      |
+              forward   |
+              back      ;
+
+public <command> = <action> [ to position <number> ]    |
+                   <action> [ <direction> ]             |
+                   <direction>                          ;
